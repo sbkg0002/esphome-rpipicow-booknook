@@ -1,0 +1,44 @@
+esphome:
+  name: nookbook-shakespeare
+  friendly_name: "Book Nook Shakespeare"
+
+esp32:
+  board: esp32dev
+
+logger:
+  level: DEBUG
+
+api:
+
+ota:
+  - platform: esphome
+    password: ""
+
+wifi:
+  ssid: !secret  wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
+  enable_on_boot: true
+  manual_ip:
+    static_ip: 192.168.1.204
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+    dns1: 1.1.1.1
+
+light:
+  - platform: binary
+    name: "LED - 1"
+    output: onboard_led
+
+# interval:
+#   - interval: 500ms
+#     then:
+#       - output.turn_on: LED
+#       - delay: 250ms
+#       - output.turn_off: LED
+
+# Use GPIO18 and GND
+output:
+  - platform: gpio
+    pin: 18
+    id: onboard_led
