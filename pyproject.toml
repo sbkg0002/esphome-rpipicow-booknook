@@ -1,0 +1,19 @@
+[project]
+name = "esphome-models"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Johan Steenhoven", email = "Johan.Steenhoven@devolksbank.nl" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "esphome>=2025.2.2",
+]
+
+[project.scripts]
+esphome-models = "esphome_models:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

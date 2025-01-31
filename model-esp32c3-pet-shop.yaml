@@ -1,11 +1,13 @@
 # esphome run
-# Number: 2
+# Number: 
 esphome:
-  name: nookbook-shakespeare
-  friendly_name: "Book Nook Shakespeare"
+  name: model-baking-c3
+  friendly_name: "Model Baking Shop c3"
 
 esp32:
-  board: esp32dev
+  board: seeed_xiao_esp32c3
+  flash_size: 4MB
+  variant: esp32c3
 
 logger:
   level: DEBUG
@@ -22,7 +24,7 @@ wifi:
   fast_connect: true
   enable_on_boot: true
   manual_ip:
-    static_ip: 192.168.1.204
+    static_ip: 192.168.1.210
     gateway: 192.168.1.1
     subnet: 255.255.255.0
     dns1: 1.1.1.1
@@ -30,17 +32,10 @@ wifi:
 light:
   - platform: binary
     name: "LED - 1"
-    output: onboard_led
+    output: gpo_led
 
-# interval:
-#   - interval: 500ms
-#     then:
-#       - output.turn_on: LED
-#       - delay: 250ms
-#       - output.turn_off: LED
-
-# Use GPIO18 and GND
+# Use GPIO10 and GND
 output:
   - platform: gpio
-    pin: 18
-    id: onboard_led
+    pin: 10
+    id: gpo_led

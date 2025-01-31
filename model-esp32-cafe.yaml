@@ -1,8 +1,8 @@
 # esphome run
 # Number: 2
 esphome:
-  name: nookbook-shakespeare
-  friendly_name: "Book Nook Shakespeare"
+  name: model-cafe
+  friendly_name: "Model Cafe"
 
 esp32:
   board: esp32dev
@@ -22,7 +22,7 @@ wifi:
   fast_connect: true
   enable_on_boot: true
   manual_ip:
-    static_ip: 192.168.1.204
+    static_ip: 192.168.1.205
     gateway: 192.168.1.1
     subnet: 255.255.255.0
     dns1: 1.1.1.1
@@ -31,13 +31,6 @@ light:
   - platform: binary
     name: "LED - 1"
     output: onboard_led
-
-# interval:
-#   - interval: 500ms
-#     then:
-#       - output.turn_on: LED
-#       - delay: 250ms
-#       - output.turn_off: LED
 
 # Use GPIO18 and GND
 output:
